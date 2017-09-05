@@ -4,7 +4,8 @@
 // https://en.wikipedia.org/wiki/Suffix_tree
 
 // Leetcode 5. Longest Palindromic Substring
-public String longestPalindrome(String s) {
+class Solution {
+    public String longestPalindrome(String s) {
         if (s.length() == 0 || s.length() == 1) {
             return s;
         }
@@ -16,9 +17,8 @@ public String longestPalindrome(String s) {
                 return "";
             }
         }
-
-    // 这段检测是否每一个字符全部相同的代码可以从100ms提速到48ms
-    // 看起来啰嗦但速度快可以节省不少时间
+        
+		// 检测字符串s是否由同一个字符所组成
         boolean allEqual = true;
         for (int i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) != s.charAt(i + 1)) {
@@ -43,26 +43,26 @@ public String longestPalindrome(String s) {
 
             if (s.charAt(i) == s.charAt(i + 1)) {
                 if (i < len - 2) {
-                        int j = i + 2;
-                        while (j < len) {
-                            if (s.charAt(i) == s.charAt(j)) {
-                                j++;
-                            } else {
-                                break;
-                            }
+                    int j = i + 2;
+                    while (j < len) {
+                        if (s.charAt(i) == s.charAt(j)) {
+                            j++;
+                        } else {
+                            break;
                         }
-                        left = i;
-                        right = j - 1;
+                    }
+                    left = i;
+                    right = j - 1;
                 } else {
-                        left = i;
-                        right = i + 1;
+                    left = i;
+                    right = i + 1;
                 }
             } else if (i < len - 2) {
                 if (s.charAt(i) == s.charAt(i + 2)) {
-                        left = i;
-                        right = i + 2;
+                    left = i;
+                    right = i + 2;
                 } else {
-                        continue;
+                    continue;
                 }
             } else {
                 continue;
@@ -70,31 +70,34 @@ public String longestPalindrome(String s) {
 
             while (true) {
                 if (left >= 0) {
-                        l = s.charAt(left);
+                    l = s.charAt(left);
                 }
                 if (right < len) {
-                        r = s.charAt(right);
+                    r = s.charAt(right);
                 }
                 if (l == r) {
-                        if ((right - left) > maxPalinLen) {
-                            maxLeft = left;
-                            maxRight = right;
-                            maxPalinLen = maxRight - maxLeft;
-                        }
-                        if (left >= 0) {
-                            left--;
-                        }
-                        if (right < len) {
-                            right++;
-                        }
+                    if ((right - left) > maxPalinLen) {
+                        maxLeft = left;
+                        maxRight = right;
+                        maxPalinLen = maxRight - maxLeft;
+                    }
+                    if (left >= 0) {
+                        left--;
+                    }
 
-                        if ((left < 0) || (right >= len)) {
-                            break;
-                        }
-                } else {
+                    if (right < len) {
+                        right++;
+                    }
+
+                    if ((left < 0) || (right >= len)) {
                         break;
+                    }
+                } else {
+                    break;
                 }
             }
         }
+
         return s.substring(maxLeft, maxRight + 1);
+    }
 }
