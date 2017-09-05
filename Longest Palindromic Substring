@@ -1,4 +1,4 @@
-// 断断续续想了好几天的题。。45秒。网上比较快的是16、17ms，比我的快两倍多
+// 断断续续想了好几天的题。。45ms。网上比较快的是16、17ms，比我的快两倍多
 
 // Leetcode 5. Longest Palindromic Substring
 public String longestPalindrome(String s) {
