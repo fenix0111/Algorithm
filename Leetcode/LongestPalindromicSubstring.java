@@ -1,4 +1,7 @@
 // 断断续续想了好几天的题。。45ms。网上比较快的是16、17ms，比我的快两倍多
+// 维基百科的说明。Manacher算法是比较高效的算法。另外还有使用suffix tree的算法。
+// https://en.wikipedia.org/wiki/Longest_palindromic_substring
+// https://en.wikipedia.org/wiki/Suffix_tree
 
 // Leetcode 5. Longest Palindromic Substring
 public String longestPalindrome(String s) {
@@ -95,7 +98,3 @@ public String longestPalindrome(String s) {
         }
         return s.substring(maxLeft, maxRight + 1);
 }
-
-维基百科的说明。Manacher算法是比较高效的算法。另外还有使用suffix tree的算法。
-https://en.wikipedia.org/wiki/Longest_palindromic_substring
-https://en.wikipedia.org/wiki/Suffix_tree
