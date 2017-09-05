@@ -14,43 +14,43 @@
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) 
-	{
-    	ListNode *ret = (ListNode*)malloc(sizeof(ListNode));
-		ListNode *p = (ListNode*)malloc(sizeof(ListNode));
-		ListNode *follow = (ListNode*)malloc(sizeof(ListNode));
-		p = head;
-		follow = head;
-		ret = head;
+    {
+        ListNode *ret = (ListNode*)malloc(sizeof(ListNode));
+        ListNode *p = (ListNode*)malloc(sizeof(ListNode));
+        ListNode *follow = (ListNode*)malloc(sizeof(ListNode));
+        p = head;
+        follow = head;
+        ret = head;
 
-		if (head == NULL)
-		{
-			return head;
-		}
+        if (head == NULL)
+        {
+            return head;
+        }
 
-		while (ret)
-		{
-			if (ret->val == val)
-			{
-				ret = ret->next;
-			}
-        	else
-			{
-				break;
-			}
-		}
+        while (ret)
+        {
+            if (ret->val == val)
+            {
+                ret = ret->next;
+            }
+            else
+            {
+                break;
+            }
+        }
 
-		while (p)
-		{
-			if (p->val == val)
-			{
-				follow->next = p->next;
-				free(p);
-				p = follow->next;
-				continue;
-			}
-			follow = p;
-			p = p->next;
-		}
-		return ret;
+        while (p)
+        {
+            if (p->val == val)
+            {
+                follow->next = p->next;
+                free(p);
+                p = follow->next;
+                continue;
+            }
+            follow = p;
+            p = p->next;
+        }
+        return ret;
     }
 };
