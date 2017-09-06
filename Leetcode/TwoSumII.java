@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 // Runtime: 1ms
 
-// 主要思路是常用的“两边指针朝对象移动”。因为有“已排序”的前提，所以大于target就end往左移（让和变小）小于就begin往右移（让和变大）。
+// 主要思路是常用的“两边指针朝对方移动”。因为有“已排序”的前提，所以大于target就end往左移（让和变小）小于就begin往右移（让和变大）。
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
         int[] res = {0, 0};
