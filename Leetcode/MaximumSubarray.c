@@ -14,10 +14,10 @@ int maxSubArray(int* nums, int numsSize)
     {
         int tmp = nums[i];
         if (tmp > sum)
-                sum = tmp;
+            sum = tmp;
                 
         if (tmp < 0)
-			continue;
+            continue;
 			
         for (int j = i + 1; j < numsSize; j++)
         {
