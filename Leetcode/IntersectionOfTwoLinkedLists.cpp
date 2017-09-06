@@ -17,37 +17,36 @@ public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) 
     {
         ListNode *na = headA;
-		ListNode *nb = headB;
-		map<int, int> m;
-		while (na)
-		{
-			map<int, int>::const_iterator cit = m.find(na->val);
-			if (cit == m.end())
-			{
-				m.insert(make_pair(na->val, 1));
-			}
-			else
-			{
-				m.insert(make_pair(na->val, 2));
-			}
+        ListNode *nb = headB;
+        map<int, int> m;
+        while (na)
+        {
+            map<int, int>::const_iterator cit = m.find(na->val);
+            if (cit == m.end())
+            {
+                m.insert(make_pair(na->val, 1));
+            }
+            else
+            {
+                m.insert(make_pair(na->val, 2));
+            }
             na = na->next;
-		}
+        }
 
-		while (nb)
-		{
-			map<int, int>::const_iterator cit = m.find(nb->val);
-			if (cit == m.end())
-			{
-				m.insert(make_pair(nb->val, 1));
-			}
-			else
-			{
-				return nb;
-				//m.insert(nb->val, 2);
-			}
+        while (nb)
+        {
+            map<int, int>::const_iterator cit = m.find(nb->val);
+            if (cit == m.end())
+            {
+                m.insert(make_pair(nb->val, 1));
+            }
+            else
+            {
+                return nb;
+            }
             nb = nb->next;
-		}
-		return NULL;
+        }
+        return NULL;
     }
     
     // 32ms参考解法
