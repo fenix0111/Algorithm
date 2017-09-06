@@ -4,6 +4,11 @@
 // https://en.wikipedia.org/wiki/Suffix_tree
 
 // Leetcode 5. Longest Palindromic Substring
+// https://leetcode.com/problems/longest-palindromic-substring/description/
+// Runtime: 45ms
+
+// 主要采用遍历字符串定好一个字符后以该字符为中心向两边扩散的方法。
+// 需要注意的是回文有“偶数长度”和“奇数长度”两种，要提前判断。
 class Solution {
     public String longestPalindrome(String s) {
         if (s.length() == 0 || s.length() == 1) {
@@ -18,7 +23,7 @@ class Solution {
             }
         }
         
-		// 检测字符串s是否由同一个字符所组成
+        // 检测字符串s是否由同一个字符所组成
         boolean allEqual = true;
         for (int i = 0; i < s.length() - 1; i++) {
             if (s.charAt(i) != s.charAt(i + 1)) {
@@ -84,11 +89,9 @@ class Solution {
                     if (left >= 0) {
                         left--;
                     }
-
                     if (right < len) {
                         right++;
                     }
-
                     if ((left < 0) || (right >= len)) {
                         break;
                     }
@@ -97,7 +100,6 @@ class Solution {
                 }
             }
         }
-
         return s.substring(maxLeft, maxRight + 1);
     }
 }
