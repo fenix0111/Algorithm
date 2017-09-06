@@ -2,23 +2,24 @@
 // https://leetcode.com/problems/sqrtx/description/
 // Runtime: 19ms
 
-int mySqrt(int x) {
+int mySqrt(int x) 
+{
     if (x == 0 || x == 1)
-		{
-			return x;
-		}
-
-		long long i = 1;
-		while (i * i <= x)
-		{
-			i++;
-		}
-
-		return (int)(i - 1);
+    {
+        return x;
+    }
+    
+    long long i = 1;
+    while (i * i <= x)
+    {
+        i++;
+    }
+    return (int)(i - 1);
 }
 
 // 3ms参考解法
-int mySqrt(int x) {
+int mySqrt(int x) 
+{
     unsigned long long begin = 0;
     unsigned long long end = (x+1)/2;
     unsigned long long mid;
