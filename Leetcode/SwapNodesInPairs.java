@@ -49,4 +49,20 @@ class Solution {
 
         return res;
     }
+ 
+// 4ms解法参考
+    public ListNode swapPairs_fast(ListNode head) {
+        if (head == null || head.next == null) 
+            return head;
+        ListNode dummy = new ListNode(0), start = dummy;
+        start.next = head;
+        while (start.next != null && start.next.next != null) {
+            ListNode first = start.next, second = start.next.next;
+            first.next = second.next;
+            second.next = first;
+            start.next = second;
+            start = first;
+        }
+        return dummy.next;
+    }
 }
