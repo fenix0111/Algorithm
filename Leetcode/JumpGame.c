@@ -36,7 +36,7 @@ bool canJump(int* nums, int numsSize)
                 {
                     res = res || false;
                 }
-				next_zero_index--;
+                next_zero_index--;
                 diff++;
             }
 
