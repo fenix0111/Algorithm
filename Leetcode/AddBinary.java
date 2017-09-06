@@ -6,10 +6,8 @@ public class Solution {
     public String addBinary(String a, String b) {
         int len_a = a.length();
         int len_b = b.length();
-
         String tmp = null;
         Stack<Character> st = new Stack<>();
-
         int len_res = 0;
         if (len_a > len_b) {
             len_res = len_a;
@@ -25,10 +23,8 @@ public class Solution {
         boolean isCarry = false;
 
         while (ida >= 0 && idb >= 0) {
-
             char ca = a.charAt(ida);
             char cb = b.charAt(idb);
-
             if (ca == '1' && cb == '1') {
                 if (isCarry) {
                     st.push('1');
@@ -53,12 +49,10 @@ public class Solution {
                     st.push('1');
                 }
             }
-
             ida--;
             idb--;
             idr--;
         }
-
 
         while (idr >= 0) {
             char cr = tmp.charAt(idr);
@@ -83,47 +77,44 @@ public class Solution {
         while (!st.empty()) {
             sb.append(st.pop());
         }
-
         return sb.toString();
     }
     
     // 2ms参考解法
     public String addBinary(String a, String b) {
-    StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
+        int i=a.length()-1;
+        int j=b.length()-1;
+        int carry = 0;
+        
+        while(i >= 0 || j >= 0) {
+            int sum=0;
  
-    int i=a.length()-1;
-    int j=b.length()-1;
+            if(i >= 0 && a.charAt(i) == '1') {
+                sum++;    
+            }
  
-    int carry = 0;
+            if(j >= 0 && b.charAt(j) == '1') {
+                sum++;
+            }
  
-    while(i>=0 || j>=0){
-        int sum=0;
+            sum += carry;
  
-        if(i>=0 && a.charAt(i)=='1'){
-            sum++;    
+            if(sum >= 2){
+                carry = 1;
+            } else {
+                carry = 0;
+            }
+ 
+            sb.insert(0,  (char)((sum % 2 + '0') ));
+ 
+            i--;
+            j--;
         }
  
-        if(j>=0 && b.charAt(j)=='1'){
-            sum++;
-        }
+        if(carry == 1)
+            sb.insert(0, '1');
  
-        sum += carry;
- 
-        if(sum>=2){
-            carry=1;
-        }else{
-            carry=0;
-        }
- 
-        sb.insert(0,  (char) ((sum%2 +'0') ));
- 
-        i--;
-        j--;
+        return sb.toString();
     }
- 
-    if(carry==1)
-        sb.insert(0, '1');
- 
-    return sb.toString();
-}
 }
