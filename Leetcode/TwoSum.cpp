@@ -10,15 +10,15 @@ public:
         std::vector<int> res;
         for (int i = 0; i < len; i++) 
         {
-          for (int j = i + 1; j < len; j++) 
-          {
-            if (nums.at(i) + nums.at(j) == target) 
-            { 
-              res.push_back(i);
-              res.push_back(j);
-              return res;
+            for (int j = i + 1; j < len; j++) 
+            {
+                if (nums.at(i) + nums.at(j) == target) 
+                { 
+                    res.push_back(i);
+                    res.push_back(j);
+                    return res;
+                }
             }
-          }
         }
     }
 };
