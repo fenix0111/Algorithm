@@ -2,7 +2,8 @@
 // https://leetcode.com/problems/excel-sheet-column-number/description/
 // Runtime: 3ms
 
-int titleToNumber(char* s) {
+int titleToNumber(char* s) 
+{
     int res = 0;
     int len = strlen(s);
     int n = 0;    
