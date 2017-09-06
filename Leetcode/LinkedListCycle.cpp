@@ -11,12 +11,14 @@
  * };
  */
  
-// 两个指针，一个两步一个一步，若有环则必相见（内存地址相同）
+// 弄两个指针，每次一个走两步另一个走一步，若有环则必相见（内存地址相同）
 class Solution {
 public:
-    bool hasCycle(ListNode *head) {
+    bool hasCycle(ListNode *head) 
+    {
         if (head == NULL)
             return false;
+        
         if (head->next == NULL)
             return false;
         
@@ -24,8 +26,10 @@ public:
         ListNode * one = head;
         while (one)
         {
+            // Salve!!
             if (one == two)
                 return true;
+            
             one = one->next;
             if (two)
             {
@@ -43,7 +47,6 @@ public:
             {
                 return false;
             }
-            
         }
         return false;
     }
