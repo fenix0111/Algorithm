@@ -59,4 +59,40 @@ public class Solution {
         }
         return res;
     }
+    
+    // 60ms 参考解法
+    public List<List<Integer>> threeSum(int[] nums) {
+        if (nums == null || nums.length == 0 || nums.length < 3) 
+            return new ArrayList<>();
+
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int cur = nums[i];
+            if (nums[i] > 0) break;
+            if (i > 0 && nums[i] == nums[i-1]) continue;
+            if (i < nums.length - 2) findThreeSum(-cur, nums, i, i + 1, nums.length - 1, res);
+        }
+        return res;
+    }
+
+    private void findThreeSum(int target, int[] nums, int baseIdx, int i, int j, List<List<Integer>> res) {
+        int left = i, right = j;
+        while (left < right) {
+            if (nums[left] + nums[right] < target) {
+                left++;
+            } else if (nums[left] + nums[right] > target) {
+                right--;
+            } else {
+                 res.add(Arrays.asList(nums[baseIdx], nums[left], nums[right]));
+                 while (left < right && nums[left + 1] == nums[left]) 
+                     left++;
+                 while (left < right && nums[right - 1] == nums[right]) 
+                     right--;
+                 left++;
+                 right--;
+            }
+        }
+    }
 }
