@@ -41,7 +41,7 @@ int myAtoi(char* str)
     }
 
     actlen = end - begin + 1;
-	if (actlen == 0)
+    if (actlen == 0)
     {
         return 0;
     }
