@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/implement-strstr/description/
 // Runtime: 3ms
 
+// 实现C标准库的strstr函数。(返回needle第一次出现在haystack的指针)
 int strStr(char* haystack, char* needle) 
 {
     int len_haystack = strlen(haystack);
