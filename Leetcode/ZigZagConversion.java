@@ -1,7 +1,8 @@
-// 6. ZigZag Conversion
+// Leetcode 6. ZigZag Conversion
 // https://leetcode.com/problems/zigzag-conversion/description/
 // Runtime: 64ms
 
+// 创建临时二维数组tmp, 以zigzag方式填充tmp，填完扫一遍。
 class Solution {
     public String convert(String s, int numRows) {
         if (numRows == 1) {
@@ -9,11 +10,15 @@ class Solution {
         }
         
         int len = s.length();
+        
+        // 列数 “len/2 + 1” 是大概凭感觉定的。。
         char[][] tmp = new char[numRows][len/2 + 1];
 
         int count = 0;
         int row = -1;
         int col = 0;
+        
+        // 是否到了底部拐角
         boolean diag = false;
         while (count < len) {
             if (diag) {
@@ -33,7 +38,6 @@ class Solution {
                     diag = true;
                 }
             }
-
         }
 
         int numCols = tmp[0].length;
@@ -52,6 +56,7 @@ class Solution {
     public String convert(String s, int numRows) {
         if(numRows <= 1) 
             return s;
+        
         StringBuilder result = new StringBuilder();  
         int step = numRows * 2 - 2;
         int shift = step+2, cur = 0, len = s.length();
