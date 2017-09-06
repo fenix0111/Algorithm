@@ -4,29 +4,29 @@
 
 void arrange(int *nums, int numsSize, int begin)
 {
-	for (int i = begin; i < numsSize; i++)
-	{
-		*(nums + i) = *(nums + i + 1);
-	}
+    for (int i = begin; i < numsSize; i++)
+    {
+        *(nums + i) = *(nums + i + 1);
+    }
 }
 
 int removeElement(int* nums, int numsSize, int val) 
 {
-	int size = numsSize;
-	int cur = 0;
-	while (cur < size)
-	{
-		if (*(nums + cur) == val)
-		{
-			size--;
-			arrange(nums, size, cur);
-		}
-		else
-		{
-			cur++;
-		}
-	}
-	return size;
+    int size = numsSize;
+    int cur = 0;
+    while (cur < size)
+    {
+        if (*(nums + cur) == val)
+        {
+            size--;
+            arrange(nums, size, cur);
+        }
+        else
+        {
+            cur++;
+        }
+    }
+    return size;
 }
 
 // 3ms参考解法
