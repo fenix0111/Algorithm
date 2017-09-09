@@ -9,6 +9,9 @@ vector<vector<string>> groupAnagrams(vector<string>& strs)
     vector< vector<string> > res;
     map<string, vector<int> > m;
     string tmp;
+    
+    // 对于strs逐个做字符排序存到map里。
+    // map里的value为整数vector,保存排序后相同字符串的下标
     for(int i = 0; i < strs.size(); i++)
     {
         tmp = strs[i];
@@ -29,6 +32,8 @@ vector<vector<string>> groupAnagrams(vector<string>& strs)
     {
         vector<int> vtmp = it->second;
         vector<string> stmp;
+        
+        // 从map取下标把相应下标的strs里的字符串存到结果当中
         for (int j = 0; j < vtmp.size(); j++)
         {
             stmp.push_back(strs[vtmp[j]]);
