@@ -28,14 +28,8 @@ public class Solution {
 
     public List< List<Integer> > combinationSum2(int[] candidates, int target) {
         List<List<Integer>> res = new LinkedList<>();
-        int len = candidates.length;
-
-        for (int i = 0; i < len; i++) {
-            int n = candidates[i];
-            List<Integer> l = new LinkedList<>();
-            l.add(n);
-            csRecur(candidates, i + 1,target - n, l, res);
-        }
+        List<Integer> l = new LinkedList<>();
+        csRecur(candidates, 0,target, l, res);
         return res;
     }
 }
