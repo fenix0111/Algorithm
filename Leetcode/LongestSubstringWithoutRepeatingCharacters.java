@@ -4,7 +4,7 @@
 
 public class Solution {
     public int lengthOfLongestSubstring(String s) {
-       int len = s.length();
+        int len = s.length();
         if (len == 0 || len == 1) {
             return len;
         }
@@ -12,7 +12,7 @@ public class Solution {
         int max = 0;
         int blen = 128;
         
-        // 保存相应字符是否出现过, 原始类型总是自快的。
+        // Lookup table, 保存相应字符是否出现过, 原始类型总是自快的。
         // 一个boolean值只占1bit
         boolean[] lt = new boolean[blen];
 
@@ -33,12 +33,11 @@ public class Solution {
                         max = innerLen;
                     }
 
-
+                    // 清空Stringbuilder和lookup table
                     sb.setLength(0);
                     for (int ii = 0; ii < blen; ii++) {
                         lt[ii] = false;
                     }
-
                     break;
                 }
             }
