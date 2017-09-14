@@ -1,5 +1,5 @@
 // Leetcode 367. Valid Perfect Square
-// https://leetcode.com/submissions/detail/95225862/
+// https://leetcode.com/problems/valid-perfect-square/description/
 // Runtime: 942 ms (不及格)
 
 bool isPerfectSquare(int num) 
