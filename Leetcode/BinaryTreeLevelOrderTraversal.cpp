@@ -14,46 +14,41 @@
 class Solution {
 public:
     vector< vector<int> > levelOrder(TreeNode* root) 
-{
-	vector< vector<int> > res;
-	if (root == NULL)
-	{
-		return res;
-	}
+    {
+        vector< vector<int> > res;
+        if (root == NULL)
+            return res;
 
-	queue<TreeNode*> q;
-	q.push(root);
-	while (!q.empty())
-	{
-		queue<TreeNode*> tmp_q;
-		vector<int> v;
-
-		while (!q.empty())
-		{
-			TreeNode *t = (TreeNode*)malloc(sizeof(TreeNode));
-			t = q.front();
+        queue<TreeNode*> q;
+        q.push(root);
+        while (!q.empty())
+        {
+            queue<TreeNode*> tmp_q;
+            vector<int> v;
+            
+            while (!q.empty())
+            {
+                TreeNode *t = (TreeNode*)malloc(sizeof(TreeNode));
+                t = q.front();
 			
-			if (t->left)
-			{
-				tmp_q.push(t->left);
-			}
-			if (t->right)
-			{
-				tmp_q.push(t->right);
-			}
+                if (t->left)
+                    tmp_q.push(t->left);
+            
+                if (t->right)
+                    tmp_q.push(t->right);
 
-			v.push_back(t->val);
-			q.pop();
-		}
-
-		while (!tmp_q.empty())
-		{
-			q.push(tmp_q.front());
-			tmp_q.pop();
-		}
-		res.push_back(v);
-	}
-
-	return res;
-}
+                v.push_back(t->val);
+                q.pop();
+            }
+           
+            while (!tmp_q.empty())
+            {
+                q.push(tmp_q.front());
+                tmp_q.pop();
+            }
+            res.push_back(v);
+        }
+        
+        return res;
+    }
 };
