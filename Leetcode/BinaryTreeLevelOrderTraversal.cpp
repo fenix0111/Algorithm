@@ -11,6 +11,8 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// 又一个广度优先搜索题
 class Solution {
 public:
     vector< vector<int> > levelOrder(TreeNode* root) 
