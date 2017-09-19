@@ -16,43 +16,42 @@
 class Solution {
 public:
     TreeNode* btRecur(vector<int>& postorder, vector<int>& inorder, int pb, int pe, int ib, int ie)
-{
-	if (pb < pe)
-		return NULL;
+    {
+        if (pb < pe)
+            return NULL;
+        
+        if (ib > ie)
+            return NULL;
+        
+        int rt = 0;
+        for (int i = ib; i <= ie; i++)
+        {
+            if (inorder[i] == postorder[pb])
+            {
+                rt = i;
+                break;
+            }
+        }
 
-	if (ib > ie)
-		return NULL;
+        int ileftl = ib;
+        int ileftr = rt - 1;
+        int irightl = rt + 1;
+        int irightr = ie;
 
-	int rt = 0;
-	for (int i = ib; i <= ie; i++)
-	{
-		if (inorder[i] == postorder[pb])
-		{
-			rt = i;
-			break;
-		}
-	}
+        int prightr = pb - 1;
+        int prightl = pb + rt -ie;
+        int pleftr = prightl - 1;
+        int pleftl = pe;
 
-	int ileftl = ib;
-	int ileftr = rt - 1;
-	int irightl = rt + 1;
-	int irightr = ie;
+        TreeNode *tree = (TreeNode*)malloc(sizeof(TreeNode));
+        tree->val = inorder[rt];
+        tree->left = btRecur(postorder, inorder, pleftr, pleftl, ileftl, ileftr);
+        tree->right = btRecur(postorder, inorder, prightr, prightl, irightl, irightr);
+        return tree;
+    }
 
-	int prightr = pb - 1;
-	int prightl = pb + rt -ie;
-	int pleftr = prightl - 1;
-	int pleftl = pe;
-
-	TreeNode *tree = (TreeNode*)malloc(sizeof(TreeNode));
-	tree->val = inorder[rt];
-	tree->left = btRecur(postorder, inorder, pleftr, pleftl, ileftl, ileftr);
-	tree->right = btRecur(postorder, inorder, prightr, prightl, irightl, irightr);
-
-	return tree;
-}
-
-TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) 
-{
-	return btRecur(postorder, inorder, (int)postorder.size() - 1, 0, 0, (int)inorder.size() - 1);
-}
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) 
+    {
+        return btRecur(postorder, inorder, (int)postorder.size() - 1, 0, 0, (int)inorder.size() - 1);
+    }
 };
