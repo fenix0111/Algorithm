@@ -1,6 +1,6 @@
 // Leetcode 113. Path Sum II
 // https://leetcode.com/problems/path-sum-ii/description/
-// Runtime: 16ms
+// Runtime: 9ms
 
 /**
  * Definition for a binary tree node.
@@ -14,6 +14,7 @@
 
 // 这个问题需要注意负数的情况
 // 而且要求是从根节点到叶子节点的和所以必须要判断当前节点是否为叶子节点
+// sol改为引用后16ms提速到9ms
 class Solution {
 public:
     void psRecur(TreeNode *root, int sum, vector<int> &sol, vector< vector<int> > &vec, int target)
@@ -33,14 +34,15 @@ public:
 
         if (root->left == NULL && root->right == NULL && sum + v == target)
         {
-            vector<int> v(sol);
-            vec.push_back(v);
+            vec.push_back(sol);
             sol.pop_back();
             return;
         }
 
         psRecur(root->left, sum + v, sol, vec, target);
         psRecur(root->right, sum + v, sol, vec, target);
+        
+        // 不要忘记弹出尾端元素
         if (!sol.empty())
             sol.pop_back();
     }
