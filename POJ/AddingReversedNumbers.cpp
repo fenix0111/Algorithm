@@ -2,7 +2,7 @@
 // http://poj.org/problem?id=1504
 
 // 第一道POJ。别人眼中的水题，本小白的一大步
-
+// 关键看如何翻转整数。
 
 #include <iostream>
 
