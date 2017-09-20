@@ -106,37 +106,3 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
     ret = hed;
     return ret;
 }
-
-// 22ms参考解法
-struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) 
-{
-    int carry = 0,buffer;
-    ListPointer head,temp,last;
-    head=(struct ListNode*)malloc(sizeof(struct ListNode));
-    head->val = 0;
-    head->next = NULL;
-    last=head;
-    while(l1 != NULL || l2 != NULL || carry)
-    {
-        temp = (struct ListNode*)malloc(sizeof(struct ListNode));
-        temp->next = NULL;
-        buffer = carry;
-        
-        if(l1 != NULL) 
-            buffer += l1->val;
-        if(l2 != NULL) 
-            buffer += l2->val;
-        
-        temp->val=buffer % 10;
-        carry = (int)buffer / 10;
-        last->next = temp;
-        if(l1 != NULL) 
-            l1 = l1->next;
-        
-        if(l2 != NULL) 
-            l2 = l2->next;
-        
-        last = temp;
-    }
-    return head->next;
-}
