@@ -51,27 +51,4 @@ class Solution {
         }
         return sb.toString();
     }
-    
-    // 网上41ms解法
-    public String convert(String s, int numRows) {
-        if(numRows <= 1) 
-            return s;
-        
-        StringBuilder result = new StringBuilder();  
-        int step = numRows * 2 - 2;
-        int shift = step+2, cur = 0, len = s.length();
-        for(int i = 0; i < numRows; i ++) {
-            cur = i;
-            shift -= 2;
-            
-            while(cur < len) {
-                result.append(s.charAt(cur));
-                if(i != 0 && i != (numRows-1) && (cur + shift) < len) {
-                    result.append(s.charAt(cur+shift)); 
-                } 
-                cur += step;
-            }  
-        }
-        return result.toString();
-    }
 }
