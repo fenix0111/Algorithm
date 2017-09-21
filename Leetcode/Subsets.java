@@ -1,10 +1,12 @@
 // Leetcode 78. Subsets
 // https://leetcode.com/problems/subsets/description/
-// Runtime: 2ms
+// Runtime: 4ms
 
+// 递归轮着往list里加数
 class Solution {
     void subsetRecr(int[] nums, int idx, LinkedList<Integer> list, List<List<Integer>> res) {
         for (int j = idx + 1; j < nums.length; j++) {
+            // 这部分应该可以再优化
             LinkedList ll = new LinkedList();
             ll.addAll(list);
             ll.add(nums[j]);
@@ -16,7 +18,7 @@ class Solution {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new LinkedList<>();
 
-        // empty set
+        // 先加一个empty set
         List<Integer> empty = new LinkedList<>();
         res.add(empty);
 
@@ -29,7 +31,6 @@ class Solution {
             res.add(ll);
             subsetRecr(nums, i, ll, res);
         }
-
         return res;
     }
 }
