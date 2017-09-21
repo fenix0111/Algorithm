@@ -13,7 +13,7 @@ bool searchMatrix(int** matrix, int matrixRowSize, int matrixColSize, int target
     int end = matrixRowSize - 1;
     int mid = 0;
 
-    // search in the row
+    // 对第一列元素进行二分查找
     while (start < end)
     {
         mid = start + (end - start) / 2;
@@ -27,6 +27,8 @@ bool searchMatrix(int** matrix, int matrixRowSize, int matrixColSize, int target
             return true;
     }
 
+    // 当start等于end时退出循环
+    // 判断start行第一个元素与target大小关系。
     if (matrix[start][0] > target)
         row = start - 1;
     else if (matrix[start][0] < target)
@@ -34,6 +36,7 @@ bool searchMatrix(int** matrix, int matrixRowSize, int matrixColSize, int target
     else
         return true;
 
+    // 当target比第一行第一个元素小的时候row会变成负数
     if (row < 0)
         return false;
     
@@ -41,7 +44,7 @@ bool searchMatrix(int** matrix, int matrixRowSize, int matrixColSize, int target
     end = matrixColSize - 1;
     mid = 0;
     
-    // search in the row
+    // 对所在行进行二分查找
     while (start <= end)
     {
         mid = start + (end - start) / 2;
