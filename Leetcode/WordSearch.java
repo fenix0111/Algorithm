@@ -2,35 +2,31 @@
 // https://leetcode.com/problems/word-search/description/
 // Runtime: 41ms
 
+// 用简单的四方向搜索+辅助的访问判定表的方法做的
+// 感觉又像是图相关问题
 class Solution {
     boolean srch(char[][] board, char[] word, int row, int col, int index, boolean[][] visited) {
         boolean res = false;
         int maxrow = board.length - 1;
         int maxcol = board[0].length - 1;
 
-        if (index == word.length) {
+        if (index == word.length) 
             return true;
-        }
 
-        if (col > maxcol) {
+        if (col > maxcol) 
             return false;
-        }
 
-        if (row < 0) {
+        if (row < 0) 
             return false;
-        }
 
-        if (row > maxrow) {
+        if (row > maxrow) 
             return false;
-        }
 
-        if (col < 0) {
+        if (col < 0) 
             return false;
-        }
 
-        if (visited[row][col]) {
+        if (visited[row][col])
             return false;
-        }
 
         visited[row][col] = true;
         if (board[row][col] == word[index]) {
@@ -82,6 +78,8 @@ class Solution {
                         srch(board, w, r + 1, c, index + 1, visited) ) {
                     return true;
                 }
+                
+                // 从当前位置未能搜索到结果。重置visited进行下一轮搜索
                 for (int i = 0; i <= maxrow; i++) {
                     for (int j = 0; j <= maxcol; j++) {
                         visited[i][j] = false;
@@ -96,5 +94,4 @@ class Solution {
         }
         return false;
     }
-
 }
