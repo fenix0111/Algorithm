@@ -34,9 +34,9 @@ public class Solution {
 
         Collections.sort(intervals, comp);
 
+        // s和e为目前合并的start和end
         int s = 0;
         int e = 0;
-        int head = 0;
         for (int i = 0; i < intervals.size(); i++) {
             int begin = intervals.get(i).start;
             int end = intervals.get(i).end;
@@ -46,6 +46,7 @@ public class Solution {
                 res.add(new Interval(s, e));
             } else {
                 if (e >= begin) {
+                    // 有可能出现[1-6],[2-4]这种情况, 需要判断
                     if (end > e) {
                         res.get(res.size() - 1).end = end;
                         e = end;
@@ -54,7 +55,6 @@ public class Solution {
                     s = begin;
                     e = end;
                     res.add(new Interval(s, e));
-                    head = i;
                 }
             }
         }
