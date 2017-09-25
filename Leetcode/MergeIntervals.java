@@ -11,6 +11,8 @@
  *     Interval(int s, int e) { start = s; end = e; }
  * }
  */
+
+// 此题不假设Interval对象们按start升序排序, 所以先做了排序
 public class Solution {
     final Comparator comp = new Comparator<Interval>() {
         @Override
@@ -56,7 +58,6 @@ public class Solution {
                 }
             }
         }
-
         return res;
     }
 }
