@@ -3,6 +3,8 @@
 // Runtime: 0ms
 
 // 动态规划题
+// 这道题还有后面两道类似的格子题能用填充矩阵解决的大前提就是"每次只能向右或向下移动"
+// 要是能自由移动就变成图相关问题了
 int uniquePaths(int m, int n) 
 {
     int** t = (int**)malloc(sizeof(int*) * m);
