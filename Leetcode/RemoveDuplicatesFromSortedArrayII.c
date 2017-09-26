@@ -2,7 +2,8 @@
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/
 // Runtime: 6ms
 
-int removeDuplicates(int* nums, int numsSize) {
+int removeDuplicates(int* nums, int numsSize) 
+{
     if (numsSize == 0 || numsSize == 1 || numsSize == 2)
         return numsSize;
     
