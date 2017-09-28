@@ -16,11 +16,9 @@ struct ListNode* deleteDuplicates(struct ListNode* head)
     if (head == NULL)
         return head;
 
-    struct ListNode *p = (struct ListNode*)malloc(sizeof(struct ListNode));
     struct ListNode *cur = (struct ListNode*)malloc(sizeof(struct ListNode));
     struct ListNode *last = (struct ListNode*)malloc(sizeof(struct ListNode));
 
-    p->next = head;
     last->next = head;
     cur = head;
 
