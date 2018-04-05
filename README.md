@@ -1,7 +1,3 @@
 # Algorithm
 
-记录一些本小白的算法学习(不丢账号密码的前提下在这儿记起码不用担心整丢)。
-
-Leetcode有些代码是很久以前写的，当时没整理好故缺少些注释。日后复习时慢慢添加。
-
-除了Leetcode相关内容外也会记一些其他算法相关内容。
+nothing special..just for training
