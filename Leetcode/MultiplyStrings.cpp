@@ -9,12 +9,12 @@ public:
     {
         
         if (num1[0] == '0' || num2[0] == '0')
-		    return "0";
+            return "0";
         
         int result_size = num1.size() + num2.size();
         char *result = (char*)malloc(sizeof(char) * result_size);
         
-		for (int i = 0; i < result_size; i++)
+        for (int i = 0; i < result_size; i++)
             result[i] = 'A';
 
         int carry = 0;
