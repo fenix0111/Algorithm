@@ -10,6 +10,8 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+// 最直接的方法就是锁定新的头节点、新的尾部节点，还要把旧的尾部节点指向旧的头节点。
 class Solution 
 {
 public:
@@ -43,6 +45,7 @@ public:
             new_head = new_head->next;
         }
 
+        // 将被移到旧的head节点之前
         ListNode *before_head = (ListNode*)malloc(sizeof(ListNode));
         before_head = head;
         while (before_head->next)
