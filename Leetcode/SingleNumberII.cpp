@@ -24,4 +24,17 @@ public:
 
         return nums.at(nums.size() - 1);
     }
+    
+    // 快速解法 (摘自网络, 4 ~ 7ms)
+    int singleNumber(vector<int> &nums) 
+    {
+        int a = 0, b = 0;
+        for (int i : nums) 
+        {
+            b = (b ^ i) & ~a;
+            a = (a ^ i) & ~b;
+        }
+        return b;
+    }
+    
 };
