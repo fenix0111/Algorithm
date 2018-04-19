@@ -11,6 +11,10 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// 大体思路是：根节点的左节点的right指向根的右节点，根的right指向根的left，然后根的left设为NULL。
+// 把这个步骤递归用到根的左右子树。
+
 class Solution {
 public:
     TreeNode* flattenRecur(TreeNode* root)
@@ -20,6 +24,7 @@ public:
             return NULL;
         }
         
+	// 叶子节点直接返回自身
         if (root->left == NULL && root->right == NULL)
         {
             return root;
@@ -27,6 +32,7 @@ public:
 
         if (root->left)
         {
+            // left节点为叶子节点
             if (root->left->left == NULL && root->left->right == NULL)
             {
                 root->left->right = root->right;
