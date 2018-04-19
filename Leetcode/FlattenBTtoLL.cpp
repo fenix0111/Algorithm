@@ -32,32 +32,22 @@ public:
 
         if (root->left)
         {
-            // left节点为叶子节点
-            if (root->left->left == NULL && root->left->right == NULL)
+            TreeNode *L = flattenRecur(root->left);
+            if (L)
             {
-                root->left->right = root->right;
+                L->right = root->right;
                 root->right = root->left;
                 root->left = NULL;
                 return flattenRecur(root->right);
             }
             else
             {
-                TreeNode *L = flattenRecur(root->left);
-                if (L)
-                {
-                    L->right = root->right;
-                    root->right = root->left;
-                    root->left = NULL;
-                    return flattenRecur(root->right);
-                }
-                else
-                {
-                    return NULL;
-                }
+                return NULL;
             }
         }
         else
         {
+	    // 左节点为空时直接返回当前右子树的操作结果
             return flattenRecur(root->right);
         }
     }
