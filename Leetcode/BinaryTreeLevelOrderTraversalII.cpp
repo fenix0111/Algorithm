@@ -12,7 +12,7 @@
  * };
  */
  
- // 写的比较笨比较绕。。
+ // 写的比较笨比较绕。。STL的algorithm部分有个叫reverse的函数可以方便翻转容器元素的顺序
  
 class Solution {
 public:
@@ -40,7 +40,6 @@ public:
         q.push_back(root);
         while (!q.empty() || !l.empty())
         {
-            
             while(!q.empty())
             {
                 TreeNode *node = q.front();
@@ -68,8 +67,7 @@ public:
             
                 tmpList.push_front(l);
             }
-            
-            
+
             l.clear();
         }
         
