@@ -2,13 +2,16 @@
 // https://leetcode.com/problems/simplify-path/description/
 // Runtime: 11ms
 
+// 简单建了个数据结构，单个parent多个child的，然后令一个专门的节点跟踪路径字符串来最终确定pwd是什么
 class Solution {
-        class Node {
+    class Node {
         HashSet<Node> childList = new HashSet<>();
         Node parent = null;
         String val = "";
 
-        public Node(String name) { val = name; }
+        public Node(String name) { 
+            val = name; 
+        }
 
         public Node getParent() {
             return parent;
