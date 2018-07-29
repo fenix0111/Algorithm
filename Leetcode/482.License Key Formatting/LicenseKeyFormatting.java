@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/license-key-formatting/description/
 // Runtime: 17ms
 
+// 先把输入进来的S合并为一个String，再根据K分割。
 class Solution {
     public String licenseKeyFormatting(String S, int K) {
         String res = "";
