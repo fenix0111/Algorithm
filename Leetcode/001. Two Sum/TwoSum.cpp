@@ -1,30 +1,7 @@
 // Leetcode 1. Two Sum
 // https://leetcode.com/problems/two-sum/description/
-// Runtime: 139ms (Grade F)
-
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& nums, int target) 
-    {
-        int len = nums.size();
-        std::vector<int> res;
-        for (int i = 0; i < len; i++) 
-        {
-            for (int j = i + 1; j < len; j++) 
-            {
-                if (nums.at(i) + nums.at(j) == target) 
-                { 
-                    res.push_back(i);
-                    res.push_back(j);
-                    return res;
-                }
-            }
-        }
-    }
-};
-
-// Update: 
 // Runtime: 3ms
+
 // 使用了辅助空间复制了原始数据并做了排序。
 // 之后用头尾指针扫一遍数组。
 // 发现两个和为target的值回到原数组找下标。
