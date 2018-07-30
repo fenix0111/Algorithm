@@ -1,4 +1,4 @@
-// 190. Reverse Bits
+// Leetcode 190. Reverse Bits
 // https://leetcode.com/problems/reverse-bits/description/
 // Runtime: 12ms
 
