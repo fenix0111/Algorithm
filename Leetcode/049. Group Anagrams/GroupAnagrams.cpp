@@ -3,7 +3,6 @@
 // Runtime: 42ms
 
 // submission里最快的是差不多26ms，鄙人的依然有提升空间
-// Leetcode 49. Group Anagrams
 vector<vector<string>> groupAnagrams(vector<string>& strs)
 {
     vector< vector<string> > res;
