@@ -1,7 +1,8 @@
 // Leetcode 289. Game of Life
-// 
-// 
+// https://leetcode.com/problems/game-of-life/description/
+// Runtime: 1ms
 
+// 暴力解法，it works但很臭
 public class Solution {
 
     // 289. Game of Life
@@ -91,6 +92,5 @@ public class Solution {
                 board[r][c] = temp[r][c];
             }
         }
-
     }
 }
