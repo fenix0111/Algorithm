@@ -1,3 +1,3 @@
 # Algorithm
 
-nothing special..just for training
+QVI NON EST HODIE CRAS MINVS APTVS ERIT
