@@ -43,3 +43,52 @@ int removeDuplicates(int* nums, int numsSize)
     }
     return len;
 }
+
+// Updated
+// Runtime: 8ms
+
+int removeDuplicates(int* nums, int numsSize) 
+{
+    if (numsSize <= 1) 
+	{
+		return numsSize;
+	}
+
+	int res = 1;
+	int last = nums[0];
+	int lastindex = 0;
+	int insertpos = 0;
+	int i = 1;
+	while (i < numsSize)
+	{
+		if (last == nums[i]) 
+		{
+			if (insertpos == 0)
+			{
+				insertpos = lastindex + 1;
+			}
+			
+			while (last == nums[i]) 
+			{
+				i++;
+			}
+
+			nums[insertpos] = nums[i];
+		}
+		else 
+		{
+			if (insertpos != 0) 
+			{
+				nums[insertpos] = nums[i];
+				insertpos++;
+			}
+
+			last = nums[i];
+			lastindex = i;
+			res++;
+			i++;
+		}
+	}
+
+	return res;
+}
