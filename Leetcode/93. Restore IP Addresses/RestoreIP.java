@@ -2,10 +2,12 @@
 // https://leetcode.com/problems/restore-ip-addresses/description/
 // Runtime: 4ms
 
-// 直接用了暴力解法。这个问题比较特殊，就是IP每个部分仅有4位，枚举了也没多少运算量。
+// 直接用了暴力解法。这个问题比较特殊，就是IP每个部分仅有4位，全部枚举了也没多少运算量。
 class Solution {
     boolean isValidIp(String ipStr, int b, int e) {
         String ip = ipStr.substring(b, e);
+        
+        // 要排除掉类似010，001这种
         if (ip.length() > 1 && ip.startsWith("0")) {
             return false;
         }
