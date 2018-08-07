@@ -4,7 +4,9 @@
 
 // 用了深度搜索
 class Solution {
-    boolean islandsDFS(boolean[][] vis, char[][] grid, int gridrow, int gridcol) {
+    
+    // 此函数负责着色
+    void islandsDFS(boolean[][] vis, char[][] grid, int gridrow, int gridcol) {
         char LAND = '1';
         char SEA = '0';
 
@@ -12,12 +14,12 @@ class Solution {
         int col = grid[0].length;
 
         if (gridrow < 0 || gridrow >= row || gridcol < 0 || gridcol >= col) {
-            return false;
+            return;
         }
 
         // if already visited
         if (vis[gridrow][gridcol]) {
-            return false;
+            return;
         }
 
         // left,
@@ -26,17 +28,13 @@ class Solution {
         // bottom
         if (grid[gridrow][gridcol] == LAND) {
             vis[gridrow][gridcol] = true;
-            
-            // 直接return每个遍历的话有可能因为中间某一个遍历返回true从而直接返回导致得出错误的结果
-            boolean left = islandsDFS(vis, grid, gridrow, gridcol - 1);
-            boolean up = islandsDFS(vis, grid, gridrow - 1, gridcol);
-            boolean right = islandsDFS(vis, grid, gridrow, gridcol + 1);
-            boolean bottom = islandsDFS(vis, grid, gridrow + 1, gridcol);
-            return left || up || right || bottom || true;
-
+            islandsDFS(vis, grid, gridrow, gridcol - 1);
+            islandsDFS(vis, grid, gridrow - 1, gridcol);
+            islandsDFS(vis, grid, gridrow, gridcol + 1);
+            islandsDFS(vis, grid, gridrow + 1, gridcol);
         } else {
             vis[gridrow][gridcol] = true;
-            return false;
+            return;
         }
     }
 
@@ -63,11 +61,13 @@ class Solution {
 
         for (int r = 0; r < row; r++) {
             for (int c = 0; c < col; c++) {
-                if (islandsDFS(visited, grid, r, c)) {
+                if (visited[r][c] == false && grid[r][c] == LAND) {
                     num++;
+                    islandsDFS(visited, grid, r, c);
                 }
             }
         }
+
         return num;
     }
 }
