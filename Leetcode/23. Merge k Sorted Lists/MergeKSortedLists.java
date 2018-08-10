@@ -21,8 +21,10 @@ class Solution {
         // for head
         ListNode head = null;
 
+        // for connecting all chains
         ListNode conn = new ListNode(-1);
         for (int i = 0; i < lists.length; i++) {
+            // check the empty chain
             if (lists[i] == null) {
                 continue;
             }
