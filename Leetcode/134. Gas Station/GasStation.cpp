@@ -5,9 +5,6 @@
 class Solution {
 public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
-        // if (gas == nullptr || cost == nullptr) {
-        //     return 0;
-        // }
         
         int len = gas.size();
         int remain = 0;
@@ -33,7 +30,6 @@ public:
                     return i;
                 }
             }
- 
         }
         
         return -1;
