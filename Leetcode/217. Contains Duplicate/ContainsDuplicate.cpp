@@ -3,7 +3,8 @@
 // Runtime: 24ms
 
 // if need to keep argument intact, using map
-class Solution {
+class Solution 
+{
 public:
     bool containsDuplicate(vector<int>& nums) 
     {
