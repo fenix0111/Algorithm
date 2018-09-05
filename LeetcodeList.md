@@ -1,7 +1,7 @@
 No.          | Title        | Difficulty  | Type | Problem Description |
 ------------ | ------------ | ----------- | ---- | ------------------- |
-1 | [Two Sum](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/001.%20Two%20Sum) | Easy | | [Link](https://leetcode.com/problems/two-sum/description/)
-2 | [Add Two Numbers](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/002.%20Add%20Two%20Numbers) | Medium | | [Link](https://leetcode.com/problems/add-two-numbers/description/)
+1 | [Two Sum](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/001.%20Two%20Sum) | :star: | | [Link](https://leetcode.com/problems/two-sum/description/)
+2 | [Add Two Numbers](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/002.%20Add%20Two%20Numbers) | :star: :star: | | [Link](https://leetcode.com/problems/add-two-numbers/description/)
 3 | [Longest Substring Without Repeating Characters](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/003.%20Longest%20Substring%20Without%20Repeating%20Characters) | Medium | |  [Link](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)
 4 | [Median of Two Sorted Arrays](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/004.%20Median%20of%20Two%20Sorted%20Arrays) | Hard | | [Link](https://leetcode.com/problems/median-of-two-sorted-arrays/description/)
 5 | [Longest Palindromic Substring](https://github.com/fenix0111/Algorithm/tree/master/Leetcode/005.%20Longest%20Palindromic%20Substring) | Medium | | [Link](.com/problems/longest-palindromic-substring/description/)
