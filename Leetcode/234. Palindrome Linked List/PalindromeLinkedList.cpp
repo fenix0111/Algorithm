@@ -36,6 +36,8 @@ public:
         }
         else
         {
+            // reach the end of the linked list. start to compare.
+            // if not equal then return NULL
             if (h->val == r->val)
             {
                 return h->next;
