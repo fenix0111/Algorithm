@@ -26,19 +26,19 @@ public:
                        1073741824 };
         int b = 0;
         int e = 16;
-        int mid = (e - b)/2;
+        int mid = (e - b) / 2;
         
         while (b < e)
         {
             if (num < pow4[mid])
             {
                 e = mid;
-                mid = (e + b)/2;
+                mid = (e + b) / 2;
             }
             else if (num > pow4[mid])
             {
                 b = mid + 1;
-                mid = (e + b)/2;
+                mid = (e + b) / 2;
             }
             else
             {
