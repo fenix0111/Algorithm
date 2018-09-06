@@ -9,7 +9,6 @@ class Solution
 public:
     bool isAnagram(string s, string t) 
     {
-        
         int bkts[26] = {0};
         int bktt[26] = {0};
         
