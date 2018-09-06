@@ -12,6 +12,7 @@
  */
 
 // assign node the next node value, then make node->next to point to node->next->next
+// personally I don't like this problem. the value in the node should not be modified if possible.
 class Solution 
 {
 public:
