@@ -10,9 +10,13 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+
+// assign node the next node value, then make node->next to point to node->next->next
+class Solution 
+{
 public:
-    void deleteNode(ListNode* node) {
+    void deleteNode(ListNode* node) 
+    {
         node->val = node->next->val;
         node->next = node->next->next;
     }
