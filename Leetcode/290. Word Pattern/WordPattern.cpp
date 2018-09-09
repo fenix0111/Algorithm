@@ -19,9 +19,9 @@ public:
             return false;
         }
         
-        // check pattern->str
         for (int i = 0; i < results.size(); i++)
         {
+            // check pattern->str
             if (m.find(pattern[i]) == m.end())
             {
                 m.insert(make_pair(pattern[i], results[i]));
@@ -33,11 +33,8 @@ public:
                     return false;
                 }
             }
-        }
-        
-        // check str->pattern
-        for (int i = 0; i < results.size(); i++)
-        {
+            
+            // check str->pattern
             if (rm.find(results[i]) == rm.end())
             {
                 rm.insert(make_pair(results[i], pattern[i]));
