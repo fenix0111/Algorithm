@@ -17,11 +17,11 @@ public:
 
         while (pnum < len && pzero < len)
         {
-	        while (pzero < len && nums[pzero] != 0)
-            pzero++;
+            while (pzero < len && nums[pzero] != 0)
+                pzero++;
 
             while (pnum < len && nums[pnum] == 0)
-            pnum++;
+                pnum++;
 
             if (pnum > pzero)
             {
