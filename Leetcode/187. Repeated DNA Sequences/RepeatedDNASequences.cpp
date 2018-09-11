@@ -14,6 +14,8 @@ public:
             return v;
         
         unordered_map<string, int> m;
+        
+        // be careful here, boundary of for loop is s.size() - 9 not 10
         for (int i = 0; i < s.size() - 9; i++)
         {
             string tmp = s.substr(i, 10);
