@@ -17,23 +17,23 @@ public:
         int ret = INT_MAX;
         int sum = 0;
 
-	      while (front < nums.size() && rear <= front)
-	      {
-		        if (sum + nums[front] < s)
-		        {
-			          sum = sum + nums[front];
-			          front++;
-		        }
-		        else
+        while (front < nums.size() && rear <= front)
+        {
+            if (sum + nums[front] < s)
             {
-			          if (front - rear < ret)
-			          {
-				            ret = front - rear;
-			          }
-			          sum = sum - nums[rear];
-			          rear++;
-		        }
-	      }
+                sum = sum + nums[front];
+                front++;
+            }
+            else
+            {
+                if (front - rear < ret)
+                {
+                    ret = front - rear;
+                }
+                sum = sum - nums[rear];
+                rear++;
+            }
+        }
         
         if (ret == INT_MAX)
         {
