@@ -2,6 +2,11 @@
 // https://leetcode.com/problems/minimum-size-subarray-sum/description/
 // Runtime: 8ms
 
+// one pointer in front, another in rear. 
+// front pointer first move forward until sum of range [rear, front] is greater than or equal to s.
+// then move rear pointer one step forward.
+// repeat above steps until front pointer out of range or rear pointer passed the front pointer.
+
 class Solution 
 {
 public:
