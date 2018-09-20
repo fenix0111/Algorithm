@@ -8,7 +8,6 @@ class Solution
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) 
     {
-        vector<int> v;
         bool isFound = false;
         for (auto it = matrix.begin(); it != matrix.end(); it++)
         {
@@ -20,3 +19,4 @@ public:
         return isFound;
     }
 };
+
