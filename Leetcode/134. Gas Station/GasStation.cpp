@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/gas-station/description/
 // Runtime: 4ms
 
-// 
+// core idea is very similar to "Minimum Size Subarray Sum"
 class Solution 
 {
 public:
