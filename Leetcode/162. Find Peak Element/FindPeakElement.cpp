@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/find-peak-element/description/
 // Runtime: 4ms
 
+// follow up: reduce the time complexity to logarithmic
 class Solution 
 {
 public:
