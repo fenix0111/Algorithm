@@ -7,7 +7,6 @@ class Solution
 public:
     bool canConstruct(string ransomNote, string magazine) 
     {
-        bool ret = false;
         unsigned short tbl[128] = {0};
         for (int i = 0; i < magazine.size(); i++)
         {
