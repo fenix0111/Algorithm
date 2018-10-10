@@ -26,7 +26,6 @@ public:
     
     string largestNumber(vector<int>& nums) 
     {
-        vector<string> v;
         string ret;
         if (nums.size() == 0)
             return ret;
