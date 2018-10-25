@@ -13,12 +13,11 @@ public:
         string hexarray[] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f" };
         
         int tmpnum = num;
-        bool isNegative = false;
         if (num < 0)
         {
-            isNegative = true;
+            // two's complement
             tmpnum = -tmpnum;
-            tmpnum = ~tmpnum + 1; // two's complement
+            tmpnum = ~tmpnum + 1; 
         }
             
         int mask8 = 0xF0000000;
