@@ -2,6 +2,8 @@
 // https://leetcode.com/problems/longest-palindrome/
 // Runtime: 4ms
 
+// length of longest palindrome = 
+// all of the even num of character + longest odd num of character + all other odd num of character minus 1 to make even
 class Solution 
 {
 public:
