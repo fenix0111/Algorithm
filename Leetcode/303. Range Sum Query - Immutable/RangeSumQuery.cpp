@@ -2,6 +2,9 @@
 // https://leetcode.com/problems/range-sum-query-immutable/
 // Runtime: 36ms
 
+// assume an array A{a1, a2, a3...an}
+// sumRange(i, j) is equal to (a1 + a2 + ... aj) - (a1 + a2 + ... ai)
+// we could pre-compute the look-up table to reduce computation time
 class NumArray 
 {
 private:
