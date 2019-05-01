@@ -1,6 +1,6 @@
 // Leetcode 304. Range Sum Query 2D - Immutable
 // https://leetcode.com/problems/range-sum-query-2d-immutable/
-// Runtime: 32ms
+// Runtime: 28ms
 
 // similar to 1D version of Range Sum Query
 // flattened 2D look-up table to avoid memory allocations in the for-loop
