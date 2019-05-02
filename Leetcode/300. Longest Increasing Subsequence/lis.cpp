@@ -1,6 +1,6 @@
 // Leetcode 300. Longest Increasing Subsequence
 // https://leetcode.com/problems/longest-increasing-subsequence
-// Runtime: 44 ms
+// Runtime: 4 ms
 
 // 1-D Dynamic Programming
 // using binary search could improve to O(N*logN)
