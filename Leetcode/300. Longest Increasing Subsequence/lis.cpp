@@ -13,28 +13,25 @@ public:
         if (sz < 2)
             return sz;
         
-        int *tbl = new int[sz];
-        int max = 0;
-        for (int i = 0; i < sz; i++)
-        {
-            tbl[i] = 0;
-        }
+        vector<int> lis;
+        lis.reserve(sz);  // prevent dynamically increasing vector size when pushing back
+        lis.push_back(nums[0]);
         
+        vector<int>::iterator pos;
         for (int i = 1; i < sz; i++)
         {
-            for (int j = 0; j < i; j++)
+            if (lis.back() < nums[i])
             {
-                if (nums[i] > nums[j])
-                {
-                    if (tbl[i] < tbl[j] + 1)
-                        tbl[i] = tbl[j] + 1;
-                }
-                
-                if (tbl[i] > max)
-                    max = tbl[i];
+                lis.push_back(nums[i]);
+            }
+            else
+            {
+                // binary search for replacement position
+                pos = lower_bound(lis.begin(), lis.end(), nums[i]);
+                *pos = nums[i];
             }
         }
         
-        return max + 1;
+        return lis.size();
     }
 };
