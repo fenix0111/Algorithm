@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/compare-version-numbers/
 // Runtime: 4ms
 
+// take care of leading zero(s)
 class Solution 
 {
 public:
