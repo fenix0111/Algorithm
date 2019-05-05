@@ -2,7 +2,8 @@
 // https://leetcode.com/problems/unique-binary-search-trees/
 // Runtime: 4ms
 
-class Solution {
+class Solution 
+{
 public:
     int numTrees(int n) 
     {
