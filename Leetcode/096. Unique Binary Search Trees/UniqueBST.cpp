@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/unique-binary-search-trees/
 // Runtime: 4ms
 
+// Catalan number, but would be easily overflowed if using math calculations
 class Solution 
 {
 public:
