@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/next-permutation/
 // Runtime: 4ms
 
+// in fact, the "next_permutation" in <algorithm> will take care all the things :)
 class Solution 
 {
 public:
