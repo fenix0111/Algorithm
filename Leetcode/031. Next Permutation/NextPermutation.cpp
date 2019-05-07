@@ -18,10 +18,10 @@ public:
         if (sz < 2)
             return;
         
-        // from right to left, first element less than its right neighbor
+        // from right to left, the first element less than its right neighbor
         int p = sz - 1; 
         
-        // from right to left, first element greater than nums[p]
+        // from right to left, the first element greater than nums[p]
         // index also need to greater than p
         int q = sz - 1;
         int i = sz - 1;
