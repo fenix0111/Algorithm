@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/decode-ways/
 // Runtime: 0ms
 
+// if all case are valid, it forms fibonacci sequence 
 class Solution 
 {
 public:
