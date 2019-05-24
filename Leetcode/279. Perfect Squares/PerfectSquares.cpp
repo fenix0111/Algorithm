@@ -4,7 +4,7 @@
 
 // Lagrange's four-square theorem
 // https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem
-// Thanks for https://leetcode.com/problems/perfect-squares/discuss/290396/c%2B%2B-DP-and-math
+// Thanks to https://leetcode.com/problems/perfect-squares/discuss/290396/c%2B%2B-DP-and-math
 class Solution 
 {  
 private:  
