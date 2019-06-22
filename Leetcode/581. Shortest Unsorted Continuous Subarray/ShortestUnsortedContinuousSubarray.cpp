@@ -14,20 +14,14 @@ public:
         int beg = 0;
         int end = nums.size() - 1;
         while (nums[beg] == v[beg] && beg < end)
-        {
             beg++;
-        }
-        
+
         while (nums[end] == v[end] && beg < end)
-        {
             end--;
-        }
         
         // the array has already been sorted 
         if (beg == end)
-        {
             return 0;
-        }
         
         return end - beg + 1;
     }
