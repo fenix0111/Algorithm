@@ -26,9 +26,7 @@ public:
             
             // source not found in S
             if (comp.find(src) == string::npos)
-            {
                 continue;
-            }
             
             string target = dstmap.find(pos)->second;
             int n = last;
