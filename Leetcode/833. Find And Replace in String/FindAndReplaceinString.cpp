@@ -23,9 +23,10 @@ public:
             int pos = it->first;
             string src = it->second;
             string comp = S.substr(pos, src.size());
+            
+            // source not found in S
             if (comp.find(src) == string::npos)
             {
-                cout << src << " ";
                 continue;
             }
             
@@ -40,6 +41,7 @@ public:
             ret.append(target);
         }
         
+        // copy the remaining part
         if (last < S.size())
         {
             for (int j = last; j < S.size(); j++)
