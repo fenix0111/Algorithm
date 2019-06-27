@@ -8,7 +8,7 @@ int uniquePathsWithObstacles(int** obstacleGrid, int obstacleGridRowSize, int ob
 {
     int** t = (int**)malloc(sizeof(int*) * obstacleGridRowSize);
     for (int i = 0; i < obstacleGridRowSize; i++)
-	{
+    {
         t[i] = (int*)malloc(sizeof(int) * obstacleGridColSize);
         
         // 为了日后方便先把所有内存值初始化为0
