@@ -12,6 +12,8 @@ public:
 
         sort(tbl.begin(), tbl.end());
         int beg = 0;
+        
+        // number of the least elements are at most half of the elements + 1
         int end =  1 + nums.size() / 2;
         int c = 0;
         while(c < nums.size())
