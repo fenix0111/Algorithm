@@ -18,6 +18,7 @@ public:
 };
 */
 
+// need to put all the value in the same level into the array, not only the children of current node
 class Solution 
 {
 public:
