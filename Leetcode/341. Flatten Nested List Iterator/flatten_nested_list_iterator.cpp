@@ -19,6 +19,8 @@
  *     const vector<NestedInteger> &getList() const;
  * };
  */
+
+// follow-up: what if the vector<NestedInteger> is very large ?
 class NestedIterator 
 {
     vector<int> vec;
@@ -49,8 +51,7 @@ public:
 
     int next() 
     {
-        int ret = vec[idx++];
-        return ret;
+        return vec[idx++];
     }
 
     bool hasNext() 
