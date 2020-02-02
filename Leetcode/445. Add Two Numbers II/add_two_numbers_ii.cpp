@@ -16,7 +16,6 @@ class Solution
 public:
     ListNode* helper(ListNode* l1, ListNode* l2, int count, int endCount) 
     {
-        
         if (l1 && l2)
         {
             if (count < endCount)
