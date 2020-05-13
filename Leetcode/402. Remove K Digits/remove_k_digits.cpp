@@ -10,7 +10,9 @@ public:
     {
         int sz = num.length();
         if (sz == k)
+        {
             return "0";
+        }
         
         deque<char> q;
         int deleted = 0;
@@ -46,22 +48,22 @@ public:
         }
 
         // loop ended before reach the k, erase from back
-        while (deleted < k )
+        while (deleted++ < k )
         {
             q.pop_back();
-            deleted++;
         }
         
         // fill the queue with the remaining numbers
         while (cp < sz)
         {
-            q.push_back(num[cp]);
-            cp++;
+            q.push_back(num[cp++]);
         }
         
         // clear the leading zeroes
         while (q.front() == '0')
+        {
             q.pop_front();
+        }
         
         // build result string
         while (!q.empty())
@@ -72,7 +74,9 @@ public:
         
         // return zero when the result is an empty string
         if (ret == "")
+        {
             ret = "0";
+        }
         
         return ret;
     }
