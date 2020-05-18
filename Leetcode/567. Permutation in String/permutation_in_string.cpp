@@ -1,7 +1,7 @@
 // Leetcode 567. Permutation in String
 // https://leetcode.com/problems/permutation-in-string/
 // time complexity: O(n2)
-// space complexity: O(n)
+// space complexity: O(1)
 
 class Solution 
 {
