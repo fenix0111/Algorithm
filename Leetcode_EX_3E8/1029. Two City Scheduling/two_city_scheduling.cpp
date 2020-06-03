@@ -4,6 +4,8 @@
 // space complexity: O(1)
 
 // make min-heap
+// we should sort with condition x[0] + y[1] < x[0] + y[1]
+// which equals to x[0] - x[1] > y[0] - y[1]
 bool comp(vector<int>& x, vector<int>& y)
 {
     return x[0] - x[1] > y[0] - y[1];
