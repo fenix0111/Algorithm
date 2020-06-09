@@ -3,9 +3,11 @@
 // time complexity: O(length of s)
 // space complexity: O(1)
 
-class Solution {
+class Solution 
+{
 public:
-    bool isSubsequence(string s, string t) {
+    bool isSubsequence(string s, string t) 
+    {
         int si = 0;
         int ti = 0;
         while (si < s.length() && ti < t.length())
