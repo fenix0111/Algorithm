@@ -1,30 +1,22 @@
 // Leetcode 392. Is Subsequence
 // https://leetcode.com/problems/is-subsequence/
-// Runtime: 60ms (not fast)
+// time complexity: O(length of s)
+// space complexity: O(1)
 
-class Solution 
-{
+class Solution {
 public:
-    bool isSubsequence(string s, string t) 
-    {
-        if (s.size() == 0)
-            return true;  // why ? 
-        
-        int is = 0;
-        int it = 0;
-        while (it < t.size())
+    bool isSubsequence(string s, string t) {
+        int si = 0;
+        int ti = 0;
+        while (si < s.length() && ti < t.length())
         {
-            if (s[is] == t[it])
+            if (s[si] == t[ti])
             {
-                is++;
-                if (is == s.size())
-                {
-                    return true;
-                }
+                si++;
             }
-            it++;
+            ti++;
         }
         
-        return false;
+        return si == s.length();
     }
 };
