@@ -1,7 +1,7 @@
 // Leetcode 95. Unique Binary Search Trees II
 // https://leetcode.com/problems/unique-binary-search-trees-ii/
 // time complexity: O(n! * log(n))
-// space complexity: O(n)
+// space complexity: O(n * n)
 
 /**
  * Definition for a binary tree node.
