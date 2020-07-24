@@ -33,7 +33,8 @@ public:
         }
     }
     
-    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) 
+    {
         unordered_map<int, vector<int>> G;
         int size = graph.size();
         for (int i = 0; i < size; i++)
