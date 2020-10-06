@@ -3,8 +3,8 @@
 // time complexity: O(N)
 // space complexity: O(N)
 
-// keep the "sum of nums" mod k, and check if there is same mod result appeared twice in which distance between two indices is greater than 1.
-// if there are two same mode results, it means there is a multiple of k between them, since mod of multiple k is zero. 
+// keep the "sum of nums" mod k, and check if there are same mod results appeared twice in which distance between two indices is greater than 1.
+// if there are two same mod results, it means there is a multiple of k between them, since mod of multiple k is zero. 
 // take care if k is zero
 
 class Solution 
