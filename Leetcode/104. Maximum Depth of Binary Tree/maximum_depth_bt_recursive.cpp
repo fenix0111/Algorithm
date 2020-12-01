@@ -25,3 +25,6 @@ public:
         return localMax + 1;
     }
 };
+
+// the code above could be abbreviated as
+// return root == NULL ? 0 : max(maxDepth(root->left), maxDepth(root->right)) + 1;  
