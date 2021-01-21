@@ -1,6 +1,6 @@
 // Leetcode 1673. Find the Most Competitive Subsequence
 // https://leetcode.com/problems/find-the-most-competitive-subsequence/
-// time complexity: O(nk) --> k for manipulate result vector
+// time complexity: O(n) 
 // space complexity: O(n)
 
 class Solution 
