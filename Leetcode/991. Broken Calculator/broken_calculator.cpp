@@ -26,7 +26,7 @@ public:
             step++;
         }
         
-        step += abs(x - y);
+        step += (x - y);
         
         return step;
     }
