@@ -83,6 +83,11 @@ public:
         
         for (int i = num; i <= 9; i++)
         {
+            if ((i & 1) == 0)
+            {
+                continue;
+            }
+            
             if (subtraction(i, counts))
             {
                 buf.push_back(i);
@@ -101,8 +106,8 @@ public:
         return false;
     }
     
-    // 0, 2, 4, 6 each has a unique character 
-    void eliminateZeroTwoFourSix(int* counts, vector<int>& buf)
+    // 0,2,4,6,8 each has unique character
+    void eliminateZeroTwoFourSixEight(int* counts, vector<int>& buf)
     {
         int c = counts['z' - 'a'];
         while (c > 0)
@@ -135,6 +140,14 @@ public:
             buf.push_back(6);
             c--;
         }
+        
+        c = counts['g' - 'a'];
+        while (c > 0)
+        {
+            subtraction(8, counts);
+            buf.push_back(8);
+            c--;
+        }
     }
     
     string originalDigits(string s) 
@@ -150,7 +163,7 @@ public:
         vector<int> buf;
         string result = "";
         
-        eliminateZeroTwoFourSix(counts, buf);
+        eliminateZeroTwoFourSixEight(counts, buf);
         
         originalDigits(buf, counts, 1);
         sort(buf.begin(), buf.end());
