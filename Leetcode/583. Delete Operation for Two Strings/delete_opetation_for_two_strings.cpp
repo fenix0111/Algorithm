@@ -7,43 +7,28 @@
 class Solution 
 {
 public:
-    int longestCommonSubsequence(string& text1, string& text2) 
+    int minDistance(string word1, string word2) 
     {
-        int row = text2.length();
-        int col = text1.length();
-        
-        int tbl[row + 1][col + 1];
-        for (int i = 0; i <= row; i++)
-        {
-            tbl[i][0] = 0;
-        }
-        
-        for (int i = 0; i <= col; i++)
-        {
-            tbl[0][i] = 0;
-        }
+        int row = word1.length();
+        int col = word2.length();
+        vector<vector<int>> dp(row + 1, vector<int>(col + 1, 0));
         
         for (int r = 1; r <= row; r++)
         {
             for (int c = 1; c <= col; c++)
             {
-                if (text1[c - 1] == text2[r - 1])
+                if (word1[r - 1] == word2[c - 1])
                 {
-                    tbl[r][c] = tbl[r - 1][c - 1] + 1;
+                    dp[r][c] = dp[r - 1][c - 1] + 1;
                 }
                 else
                 {
-                    tbl[r][c] = tbl[r - 1][c] > tbl[r][c - 1] ? tbl[r - 1][c] : tbl[r][c - 1];
+                    dp[r][c] = max(dp[r - 1][c], dp[r][c - 1]);
                 }
             }
         }
-
-        return tbl[row][col];
-    }
-    
-    int minDistance(string word1, string word2) 
-    {
-        int lcs = longestCommonSubsequence(word1, word2);
-        return word1.length() - lcs + word2.length() - lcs;
+        
+        int lcs = dp.back().back();
+        return (word1.length() - lcs) + (word2.length() - lcs);
     }
 };
