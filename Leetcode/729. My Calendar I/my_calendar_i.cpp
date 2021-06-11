@@ -16,10 +16,6 @@ public:
             return true;
         }
         
-        sort(dates.begin(), dates.end(), [](auto x, auto y){
-           return x.second < y.first; 
-        });
-        
         bool valid = true;
         for (int i = 0; i < dates.size(); i++)
         {
