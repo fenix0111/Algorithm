@@ -10,93 +10,64 @@ class Solution
 public:
     int calculate(string s) 
     {
-        int result = 0;
         stack<char> ops;
         stack<int> nums;
-        int parenthesis = 0;
         while (i < s.length())
         {
+            int num = 0;
             if (s[i] == '(')
             {
                 i++;
-                int num = calculate(s);
-                if (ops.empty())
-                {
-                    nums.push(num);
-                }
-                else
-                {
-                    if (nums.empty())
-                    {
-                        nums.push(-num);
-                        continue;
-                    }
-                    int x = nums.top();
-                    nums.pop();
-                    char op = ops.top();
-                    ops.pop();
-                    if (op == '+')
-                    {
-                        nums.push(x + num);
-                    }
-                    else
-                    {
-                        nums.push(x - num);
-                    }
-                }
+                num = calculate(s);
             }
             else if (s[i] == ')')
             {
                 i++;
                 return nums.top();
             }
-            else if (s[i] == '+')
+            else if (s[i] == '+' || s[i] == '-')
             {
                 ops.push(s[i]);
                 i++;
-            }
-            else if (s[i] == '-')
-            {
-                ops.push(s[i]);
-                i++;
+                continue;
             }
             else if (s[i] == ' ')
             {
                 i++;
+                continue;
             }
             else
             {
-                int num = 0;
                 while (i < s.length() && s[i] >= '0' && s[i] <= '9')
                 {
                     num *= 10;
                     num += (s[i] - '0');
                     i++;
                 }
-                
-                if (ops.empty())
+            }
+            
+            if (ops.empty())
+            {
+                nums.push(num);
+            }
+            else
+            {
+                if (nums.empty())
                 {
-                    nums.push(num);
+                    nums.push(-num);
+                    continue;
+                }
+                int x = nums.top();
+                nums.pop();
+                char op = ops.top();
+                ops.pop();
+                if (op == '+')
+                {
+                    nums.push(x + num);
                 }
                 else
                 {
-                    if (nums.empty())
-                    {
-                        nums.push(-num);
-                        continue;
-                    }
-                    int x = nums.top();
-                    nums.pop();
-                    char op = ops.top();
-                    ops.pop();
-                    if (op == '+')
-                    {
-                        nums.push(x + num);
-                    }
-                    else
-                    {
-                        nums.push(x - num);
-                    }
+                    nums.push(x - num);
                 }
             }
         }
