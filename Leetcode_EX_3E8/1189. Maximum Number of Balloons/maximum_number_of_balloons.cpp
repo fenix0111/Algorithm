@@ -14,14 +14,12 @@ public:
             counter[c - 'a']++;
         }
         
-        int result = 0;
         int b = counter['b' - 'a'];
         int a = counter['a' - 'a'];
-        int l = counter['l' - 'a'] > 1 ? counter['l' - 'a'] / 2 : 0;        
-        int o = counter['o' - 'a'] > 1 ? counter['o' - 'a'] / 2 : 0;
+        int l = counter['l' - 'a'] / 2;        
+        int o = counter['o' - 'a'] / 2;
         int n = counter['n' - 'a'];
-        result = min({b, a, l, o, n});
         
-        return result;
+        return min({b, a, l, o, n});
     }
 };
