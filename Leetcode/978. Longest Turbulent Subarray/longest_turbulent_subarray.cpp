@@ -3,6 +3,7 @@
 // time complexity: O(n)
 // space complexity: O(1)
 
+// have to deal with the case which adjacent number are same
 class Solution 
 {
 public:
