@@ -8,7 +8,7 @@ class Solution
 public:
     int tribonacci(int n) 
     {
-        vector<int> buf(38, 0);
+        int buf[38] = { 0 };
         buf[0] = 0;
         buf[1] = 1;
         buf[2] = 1;
