@@ -9,17 +9,15 @@ public:
     void DFS(int vertex, unordered_map<int, vector<int>>& G, vector<int>& path, vector<vector<int>>& result, int target)
     {
         path.push_back(vertex);
-        auto it = G.find(vertex);
-        if (it == G.end())
+        if (vertex == target)
         {
-            // reach the end
-            if (vertex == target)
-            {
-                vector<int> path_copy(path);
-                result.push_back(path_copy);
-            }
+            vector<int> pathcopy(path);
+            result.push_back(pathcopy);
+            return;
         }
-        else
+        
+        auto it = G.find(vertex);
+        if (it != G.end())
         {
             vector<int>& neighbors = it->second;
             for (int v : neighbors)
