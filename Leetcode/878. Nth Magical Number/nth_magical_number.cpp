@@ -25,7 +25,7 @@ public:
             b = tmp % gcd;
         }
         
-        while (beg < end)
+        while (beg <= end)
         {
             mid = beg + (end - beg) / 2;
             unsigned long long dg = mid / g;
@@ -40,7 +40,7 @@ public:
                         
             if (sum >= n)
             {
-                end = mid;
+                end = mid - 1;
             }
             else
             {
