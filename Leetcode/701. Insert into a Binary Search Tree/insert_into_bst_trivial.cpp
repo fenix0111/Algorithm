@@ -1,6 +1,7 @@
 // Leetcode 701. Insert into a Binary Search Tree
 // https://leetcode.com/problems/insert-into-a-binary-search-tree/
-// Runtime: 80ms
+// time complexity: O(n)
+// space complexity: O(n)
 
 /**
  * Definition for a binary tree node.
