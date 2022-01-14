@@ -1,113 +1,114 @@
 // Leetcode 8. String to Integer (atoi)
 // https://leetcode.com/problems/string-to-integer-atoi/description/Runtime: 15ms
-// Runtime: 15ms
+// time complexity: O(n)
+// space complexity: O(1)
 
-int myAtoi(char* str) 
+class Solution
 {
-    int isMinus = -1;  // -1 for no sign
-    int len = strlen(str);
-    int result = 0;
-    long long tmp = 0;
-    int begin = 0;
-    int end = -1;
-    int actlen = 0;
+public:
+    int myAtoi(string s)
+    {
+        int isMinus = -1;  // -1 for no sign
+        int len = s.length();
+        int result = 0;
+        long long tmp = 0;
+        int begin = 0;
+        int end = -1;
+        int actlen = 0;
+        bool leadingZero = false;
 
-    while (isspace(str[begin]))
-    {
-        begin++;
-    }
-
-    if (str[begin] == '+')
-    {
-        isMinus = 0;
-        begin++;
-    }
-    else if (str[begin] == '-')
-    {
-        isMinus = 1;
-        begin++;
-    }
-
-    for (int i = begin; i < len; i++)
-    {
-        if (isdigit(str[i]))
+        while (isspace(s[begin]))
         {
-            end = i;
+            begin++;
         }
-        else
+        
+	// ignore leading zeroes
+        while (s[begin] == '0')
         {
-            break;
+            leadingZero = true;
+            begin++;
         }
-    }
 
-    actlen = end - begin + 1;
-    if (actlen == 0)
-    {
-        return 0;
-    }
-	
-    if (actlen > 10)
-    {
+        // "00000-42a1234"
+	// sign symbol cannot appear after numbers, even if they are zeroes
+        if (s[begin] == '+')
+        {
+            if (leadingZero)
+            {
+                return 0;
+            }
+            isMinus = 0;
+            begin++;
+        }
+        else if (s[begin] == '-')
+        {
+            if (leadingZero)
+            {
+                return 0;
+            }
+            isMinus = 1;
+            begin++;
+        }
+        
+	// "-000000000000001"
+        while (s[begin] == '0')
+        {
+            begin++;
+        }
+
+        for (int i = begin; i < len; i++)
+        {
+            if (isdigit(s[i]))
+            {
+                end = i;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        actlen = end - begin + 1;
+
+        if (actlen == 0)
+        {
+            return 0;
+        }
+
+        if (actlen > 10)
+        {
+            if (isMinus == 1)
+            {
+                return INT_MIN;
+            }
+            else
+            {
+                return INT_MAX;
+            }
+        }
+
+        for (int j = 0; j < actlen; j++)
+        {
+            tmp += pow(10, actlen - j - 1) * (s[begin + j] - 48);
+        }
+
         if (isMinus == 1)
         {
-            return INT_MIN;
+            tmp = -tmp;
+        }
+
+        if (tmp > INT_MAX)
+        {
+            result = INT_MAX;
+        }
+        else if (tmp < INT_MIN)
+        {
+            result = INT_MIN;
         }
         else
         {
-            return INT_MAX;
+            result = tmp;
         }
+        return result;
     }
-	
-    for (int j = 0; j < actlen; j++)
-    {
-        tmp += pow(10, actlen - j - 1) * (str[begin + j] - 48);
-    }
-
-    if (isMinus == 1)
-    {
-        tmp = -tmp;
-    }
-
-    if (tmp > INT_MAX)
-    {
-        result = INT_MAX;
-    }
-    else if (tmp < INT_MIN)
-    {
-        result = INT_MIN;
-    }
-    else
-    {
-        result = tmp;
-    }
-    return result;
-}
-
-// 9ms 参考解法
-int myAtoi(char* str) 
-{
-    int base=0;
-    int indicator=1;
-    int i=0;
-    while(str[i] == ' ') 
-    {
-        i++;
-    }
-    if(str[i] == '+' || str[i] == '-') 
-    {
-        indicator = str[i++] == '-'? -1:1;
-    }
-    while(str[i] >= '0' && str[i] <= '9' && str[i] != '\0') 
-    {
-        if(base > INT_MAX/10 || (base == INT_MAX/10 && str[i] > '7'))
-        {
-            return indicator==1? INT_MAX:INT_MIN;
-        }
-        else 
-        {
-            base = base*10 + (str[i] - '0');
-            i++;
-        }
-    }
-    return base*indicator;
-}
+};
