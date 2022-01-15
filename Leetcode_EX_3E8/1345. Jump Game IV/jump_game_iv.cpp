@@ -7,13 +7,13 @@
 class Solution
 {
 public:
-    int minJumps(vector<int>& arr) 
+    int minJumps(vector<int>& arr)
     {
         int sz = arr.size();
-        unordered_map<int, unordered_set<int>> M;
+        unordered_map<int, vector<int>> M;
         for (int i = 0; i < sz; i++)
         {
-            M[arr[i]].insert(i);
+            M[arr[i]].push_back(i);
         }
         
         vector<int> tbl(sz, INT_MAX);
@@ -41,8 +41,6 @@ public:
                 tbl[back] = step;
             }
             
-            // record the indices no more valid
-            vector<int> buf;
             for (int far : M[arr[pos]])
             {
                 if (step < tbl[far])
@@ -50,20 +48,10 @@ public:
                     q.push(far);
                     tbl[far] = step;
                 }
-                else
-                {
-                    // if position which has same value have already been visited has smaller step
-                    // then this position could be ignored in the future
-                    // don't erase element in the loop
-                    buf.push_back(far);
-                }
             }
             
-            // erase
-            for (int j = 0; j < buf.size(); j++)
-            {
-                M[arr[pos]].erase(buf[j]);
-            }
+            // remove the indices of same value
+            M.erase(arr[pos]);
         }
         
         return tbl.back();
