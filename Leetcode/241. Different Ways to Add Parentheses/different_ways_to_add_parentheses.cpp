@@ -27,31 +27,19 @@ public:
                 
                 vector<int> left = calculate(expression, begin, i);
                 vector<int> right = calculate(expression, i + 1, end);
-                if (c == '+')
+                for (int j = 0; j < left.size(); j++)
                 {
-                    for (int j = 0; j < left.size(); j++)
+                    for (int k = 0; k < right.size(); k++)
                     {
-                        for (int k = 0; k < right.size(); k++)
+                        if (c == '+')
                         {
                             buf.push_back(left[j] + right[k]);
                         }
-                    }
-                }
-                else if (c == '-')
-                {
-                    for (int j = 0; j < left.size(); j++)
-                    {
-                        for (int k = 0; k < right.size(); k++)
+                        else if (c == '-')
                         {
                             buf.push_back(left[j] - right[k]);
                         }
-                    }
-                }
-                else
-                {
-                    for (int j = 0; j < left.size(); j++)
-                    {
-                        for (int k = 0; k < right.size(); k++)
+                        else
                         {
                             buf.push_back(left[j] * right[k]);
                         }
