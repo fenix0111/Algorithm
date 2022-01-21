@@ -3,21 +3,17 @@
 
 class SnapshotArray
 {
-    vector<int> data;
-    int sid = 0;
-    
     // <index, <snapshot_id, value>>
     unordered_map< int, vector<pair<int, int>> > table;
     
+    // snapshot id
+    int sid = 0;
+    
 public:
-    SnapshotArray(int length)
-    {
-        data.assign(length, 0);
-    }
+    SnapshotArray(int length) { }
     
     void set(int index, int val)
     {
-        data[index] = val;
         if (table.count(index) && table[index].back().first == sid)
         {
             table[index].back().second = val;
