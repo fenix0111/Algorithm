@@ -1,6 +1,7 @@
 // Leetcode 134. Gas Station
 // https://leetcode.com/problems/gas-station/description/
-// Runtime: 4ms
+// time complexity: O(n)
+// space complexity: O(1)
 
 // core idea is very similar to "Minimum Size Subarray Sum"
 // using kadane algorithm, find subarray which sum is non negative and length is equal to gas
