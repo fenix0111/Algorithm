@@ -1,10 +1,7 @@
 // Leetcode 127. Word Ladder
 // https://leetcode.com/problems/word-ladder/description/
-// Runtime: 715ms (terrible..)
 
-// 山寨了下宽度优先搜索算法。未优化，故很慢
 class Solution {
-
     // do not write like this in production code
     class Vertex {
         public String name = "";
