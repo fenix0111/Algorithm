@@ -13,7 +13,7 @@
 // we have to find the index i which maxval is less or equal to minval with index i + 1
 // in the above example, such index is 3, therefore the answer is 4.
 
-// solution below did a bit optimization, eliminated minval, just use one integer to keep track of max value up to current index 
+// solution below did a bit optimization, eliminated maxval array, just use one integer to keep track of max value up to current index 
 class Solution
 {
 public:
