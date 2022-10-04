@@ -44,13 +44,6 @@ public:
         if (root == NULL)
             return false;
 
-        if (root->val == sum)
-        {
-            if (root->left == NULL && root->right == NULL)
-                return true;
-            else
-                return false;
-        }
         return pathSum(root, sum);
     }
 };
