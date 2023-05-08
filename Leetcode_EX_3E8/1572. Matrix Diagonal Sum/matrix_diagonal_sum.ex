@@ -1,5 +1,5 @@
-// Leetcode 1572. Matrix Diagonal Sum
-// https://leetcode.com/problems/matrix-diagonal-sum/description/
+# Leetcode 1572. Matrix Diagonal Sum
+# https://leetcode.com/problems/matrix-diagonal-sum/description/
 
 defmodule Solution do
   @spec diagonal_sum(mat :: [[integer]]) :: integer
